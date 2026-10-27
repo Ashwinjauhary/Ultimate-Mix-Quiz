@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b16">
+<title>The Ultimate Mix Quiz — Brutalist Light Edition</title>
+<style>
+:root{--bg:#f4f1e9;--panel:#fffdf7;--panel2:#e9e5db;--line:#171717;--text:#171717;--muted:#55534d;--cyan:#d5ff00;--purple:#ff5a36;--green:#167447;--yellow:#ffca28;--red:#c92323;--shadow:7px 7px 0 #171717}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background-color:var(--bg);background-image:linear-gradient(#1717170b 1px,transparent 1px),linear-gradient(90deg,#1717170b 1px,transparent 1px);background-size:24px 24px;color:var(--text);font:15px/1.65 "Arial",Helvetica,sans-serif}a{color:#174dba;text-decoration-thickness:2px;text-underline-offset:3px}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1240px;margin:auto;padding:0 24px}.topbar{position:sticky;top:0;z-index:20;background:#f4f1e9f2;backdrop-filter:blur(12px);border-bottom:3px solid var(--line)}.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:950;letter-spacing:-.04em;text-transform:uppercase}.brand b{background:var(--cyan);padding:3px 7px;border:2px solid var(--line)}.nav-actions{display:flex;gap:10px;align-items:center}.btn{border:2px solid var(--line);background:var(--panel);color:var(--text);padding:10px 15px;border-radius:0;font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:.035em;box-shadow:3px 3px 0 var(--line);display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;transition:transform .12s,box-shadow .12s}.btn:hover{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--line)}.btn.primary{background:var(--cyan);color:var(--text);border:2px solid var(--line)}.hero{padding:66px 0 42px}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:2px solid var(--line);background:var(--cyan);color:var(--text);font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.12em}.hero h1{font-size:clamp(42px,8vw,96px);line-height:.88;letter-spacing:-.085em;max-width:1000px;margin:23px 0;text-transform:uppercase}.gradient{color:var(--text);background:none;position:relative}.lead{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:800px;font-weight:600}.hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:20px;margin-top:32px}.hero-card,.card{background:var(--panel);border:2px solid var(--line);border-radius:0;box-shadow:var(--shadow)}.hero-card{padding:25px}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.metric{padding:17px;border:2px solid var(--line);border-radius:0;background:#fff}.metric strong{display:block;font-size:32px;line-height:1.2;letter-spacing:-.06em}.metric span{font-size:12px;color:var(--muted);font-weight:800;text-transform:uppercase}.metric strong.cyan{background:var(--cyan);display:inline-block;padding:0 5px}.metric strong.purple{color:var(--purple)}.pill{display:inline-block;padding:4px 9px;border:2px solid var(--line);border-radius:0;background:var(--cyan);color:var(--text);font-size:11px;font-weight:950;text-transform:uppercase}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:28px;align-items:start;padding-bottom:80px}.sidebar{position:sticky;top:88px;padding:14px;border:2px solid var(--line);border-radius:0;background:var(--panel);box-shadow:4px 4px 0 var(--line);max-height:calc(100vh - 110px);overflow:auto}.sidebar h3{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:4px 8px 12px}.sidebar a{display:block;text-decoration:none;color:var(--text);padding:8px 10px;border-left:3px solid transparent;font-size:12px;font-weight:800;text-transform:uppercase}.sidebar a:hover,.sidebar a.active{background:var(--cyan);border-left-color:var(--line);color:var(--text)}main{min-width:0}.section{padding:30px;margin-bottom:24px;scroll-margin-top:90px}.section h2{font-size:clamp(24px,3vw,36px);letter-spacing:-.055em;line-height:1.1;margin:0 0 12px;text-transform:uppercase}.section h3{font-size:18px;margin:26px 0 9px;text-transform:uppercase;letter-spacing:-.025em}.section p{color:#393832}.section-intro{color:var(--muted)!important;margin-top:0}.number{display:inline-grid;place-items:center;width:38px;height:38px;border:2px solid var(--line);background:var(--cyan);color:var(--text);font-size:14px;margin-right:9px;box-shadow:3px 3px 0 var(--line)}.callout{padding:16px 18px;border:2px solid var(--line);border-left:9px solid #174dba;border-radius:0;background:#e8efff;margin:16px 0;color:var(--text)}.callout.warn{border-left-color:var(--purple);background:#ffe6dd}.callout.good{border-left-color:var(--green);background:#dff5e8}.grid2,.grid3{display:grid;gap:14px}.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}.mini{padding:17px;border:2px solid var(--line);border-radius:0;background:#fff}.mini h4{margin:0 0 5px;text-transform:uppercase;letter-spacing:-.02em}.mini p{font-size:13px;margin:0}.table-wrap{overflow:auto;border:2px solid var(--line);border-radius:0;margin:15px 0;background:#fff}table{width:100%;border-collapse:collapse;min-width:540px}th,td{text-align:left;padding:12px 14px;border-bottom:1px solid #aaa;vertical-align:top}th{background:var(--cyan);color:var(--text);font-size:11px;text-transform:uppercase;letter-spacing:.07em;border-bottom:2px solid var(--line)}td{color:#393832}tr:last-child td{border-bottom:0}.tag{font-size:11px;color:var(--muted);border:1px solid var(--line);padding:3px 7px;border-radius:0;white-space:nowrap}.progress{height:10px;background:#dedbd1;border:2px solid var(--line);border-radius:0;overflow:hidden}.progress span{display:block;height:100%;width:0;background:var(--purple);transition:width .2s}.checklist{display:grid;gap:10px}.check{display:flex;align-items:flex-start;gap:11px;padding:11px 13px;border:2px solid var(--line);border-radius:0;background:#fff;color:var(--text)}.check input{accent-color:#d5ff00;margin-top:5px;transform:scale(1.15)}.check.done span{text-decoration:line-through;color:#777}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:6px}.field label{font-size:11px;color:var(--muted);font-weight:950;text-transform:uppercase}.field input,.field select,.field textarea{width:100%;border:2px solid var(--line);border-radius:0;background:#fff;color:var(--text);padding:11px 12px;outline:none}.field input:focus,.field select:focus,.field textarea:focus{box-shadow:4px 4px 0 var(--cyan)}.calc-results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}.result{background:#fff;border:2px solid var(--line);border-radius:0;padding:15px;box-shadow:3px 3px 0 var(--line)}.result small{color:var(--muted);display:block;font-weight:800;text-transform:uppercase}.result strong{font-size:25px;letter-spacing:-.04em}.quiz-sample{padding:18px;border:2px solid var(--line);border-radius:0;background:#fff;margin:13px 0;box-shadow:4px 4px 0 #171717}.quiz-sample .qtitle{font-weight:900;margin-bottom:12px}.option{display:flex;gap:10px;padding:9px 10px;border:1px solid #aaa;border-radius:0;margin:7px 0;color:var(--text);cursor:pointer;background:#fff}.option:has(input:checked){background:#f0ffc0;border:2px solid var(--line)}.option input{accent-color:#171717}.feedback{font-size:13px;margin-top:9px;min-height:20px;font-weight:800}.answer{color:var(--green)}.wrong{color:var(--red)}.copybox{background:#fff;border:2px solid var(--line);border-radius:0;padding:16px;white-space:pre-wrap;color:#242424;font-size:13px;overflow-wrap:anywhere}.copyrow{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:12px 0}.footer{border-top:3px solid var(--line);padding:28px 0 45px;color:var(--muted);font-size:13px;background:#e9e5db}.muted{color:var(--muted)}.small{font-size:12px}.hide{display:none!important}.badge{color:#b3311b;font-weight:950}.split{display:flex;gap:10px;flex-wrap:wrap}.split .btn{flex:0 0 auto}.faq details{border-bottom:1px solid var(--line);padding:13px 0}.faq summary{cursor:pointer;font-weight:900;text-transform:uppercase}.faq details p{margin:8px 0 0;font-size:14px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.sidebar{position:relative;top:0;max-height:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}.sidebar h3{grid-column:1/-1}.hero-grid{grid-template-columns:1fr}.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.wrap{padding:0 14px}.hero{padding:45px 0 28px}.section{padding:20px}.nav{height:60px}.brand{font-size:12px}.nav-actions .btn{padding:8px;font-size:10px}.nav-actions .btn.secondary{display:none}.grid2,.grid3,.formgrid{grid-template-columns:1fr}.calc-results{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr 1fr}.metrics{gap:8px}.metric{padding:13px}.metric strong{font-size:25px}}
+@media print{body{background:#fff;color:#171717;font-size:11pt}.topbar,.sidebar,.nav-actions,.no-print,.btn{display:none!important}.wrap{max-width:none;padding:0}.hero{padding:20px 0}.hero h1,.gradient{color:#171717;background:none}.lead,.section p,.muted,td{color:#344054}.layout{display:block}.section,.hero-card,.card{box-shadow:none;background:#fff;border:1px solid #777;break-inside:avoid;padding:18px}.section{margin-bottom:12px}.hero-grid{grid-template-columns:1fr 1fr}.metric,.mini,.check,.quiz-sample,.result{background:#fff;border-color:#777;color:#171717}th{background:#e5e5e5;color:#171717}td{border-color:#ddd}.callout{background:#f3f3f3;color:#171717}.copybox{color:#171717;background:#fff;border-color:#777}a{color:#171717;text-decoration:none}.footer{color:#555}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="wrap nav">
+  <div class="brand">CATALYST <b>CREW</b> <span class="muted">/ EVENT PLAYBOOK</span></div>
+  <div class="nav-actions">
+   <button class="btn secondary" onclick="window.print()">⤓ Export / Print PDF</button>
+   <button class="btn primary" onclick="downloadHTML()">Download HTML</button>
+  </div>
+ </div>
+</header>
+<div class="wrap">
+ <section class="hero">
+  <span class="eyebrow">✦ National Online Quiz · Event Blueprint</span>
+  <h1><span class="gradient">THE ULTIMATE<br>MIX QUIZ</span></h1>
+  <p class="lead">One quiz. Five categories. One leaderboard. A fast-paced, affordable online competition combining technology, logic, riddles, fun trivia and general awareness — designed for students across India, including IITs, NITs and other colleges.</p>
+  <div class="hero-grid">
+   <div class="hero-card">
+    <div class="split"><span class="pill">UNSTOP</span><span class="pill">INDIVIDUAL</span><span class="pill">EASY–MODERATE</span></div>
+    <h2 style="font-size:25px;margin:17px 0 8px">The event at a glance</h2>
+    <p class="muted">Proposed event identity and operating plan. Fill in the final dates, prizes and organiser details before publishing the listing.</p>
+    <div class="grid2">
+     <div class="mini"><h4>🎯 Objective</h4><p>Reward broad knowledge, accuracy and quick thinking — not advanced coding alone.</p></div>
+     <div class="mini"><h4>🧠 Format</h4><p>One timed MCQ quiz with a balanced mix of technical and non-technical questions.</p></div>
+    </div>
+   </div>
+   <div class="hero-card">
+    <div class="metrics">
+     <div class="metric"><strong class="cyan">₹9</strong><span>Proposed entry fee</span></div>
+     <div class="metric"><strong class="purple">30</strong><span>Questions</span></div>
+     <div class="metric"><strong>25 min</strong><span>Proposed duration</span></div>
+     <div class="metric"><strong>120</strong><span>Max score under +4/−1</span></div>
+    </div>
+    <p class="small muted" style="margin:15px 0 0">Planning figures only. Confirm available Unstop settings, payment terms and assessment controls before launch.</p>
+   </div>
+  </div>
+ </section>
+ <div class="layout">
+  <aside class="sidebar">
+   <h3>Documentation index</h3>
+   <a href="#executive">01 · Executive summary</a><a href="#identity">02 · Event identity</a><a href="#format">03 · Format & structure</a><a href="#syllabus">04 · Quiz blueprint</a><a href="#sample">05 · Sample questions</a><a href="#scoring">06 · Scoring & tie-breaks</a><a href="#rules">07 · Rules & integrity</a><a href="#operations">08 · Operations workflow</a><a href="#roles">09 · Team responsibilities</a><a href="#timeline">10 · Timeline</a><a href="#budget">11 · Budget calculator</a><a href="#risk">12 · Risk register</a><a href="#marketing">13 · Marketing pack</a><a href="#unstop">14 · Unstop launch checks</a><a href="#checklist">15 · Launch checklist</a><a href="#faq">16 · FAQs</a><a href="#appendix">17 · Final sign-off</a>
+  </aside>
+  <main>
+   <section class="section card" id="executive">
+    <h2><span class="number">01</span>Executive summary</h2>
+    <p class="section-intro">A ready-to-adapt proposal for a national-level, individual online quiz organised by Catalyst Crew / Catalyst Crew Dev Community.</p>
+    <p><b>The Ultimate Mix Quiz</b> is a single-round online quiz hosted on Unstop. It combines technology and computer fundamentals, logical reasoning, riddles, fun trivia, everyday science and general awareness in one assessment. The intended audience includes college students from IITs, NITs, engineering colleges, BCA/BSc programmes, business programmes and other eligible backgrounds.</p>
+    <div class="callout good"><b>Positioning statement:</b> “You don’t need to be a coding expert. Bring your curiosity, logic and quick thinking.”</div>
+    <div class="grid3">
+     <div class="mini"><h4>Inclusive</h4><p>Questions accessible to both technical and non-technical participants.</p></div>
+     <div class="mini"><h4>Competitive</h4><p>Clear scoring, a timed attempt and a transparent leaderboard policy.</p></div>
+     <div class="mini"><h4>Affordable</h4><p>Proposed ₹9 entry fee, subject to platform and payment verification.</p></div>
+    </div>
+    <h3>Objectives</h3>
+    <ul><li>Encourage cross-college participation across India.</li><li>Test practical knowledge, reasoning and lateral thinking.</li><li>Make quizzes fun without making the paper trivial or overly difficult.</li><li>Increase awareness of Catalyst Crew and its student community.</li><li>Create a repeatable format for future online quiz editions.</li></ul>
+   </section>
+   <section class="section card" id="identity">
+    <h2><span class="number">02</span>Event identity & overview</h2>
+    <div class="table-wrap"><table><tbody>
+     <tr><th>Field</th><th>Proposed details</th></tr>
+     <tr><td>Event title</td><td>The Ultimate Mix Quiz</td></tr><tr><td>Tagline</td><td>Think Fast. Mix It Up. Claim the Top Spot.</td></tr>
+     <tr><td>Organiser</td><td>Catalyst Crew / Catalyst Crew Dev Community</td></tr><tr><td>Platform</td><td>Unstop (verify event and assessment configuration)</td></tr>
+     <tr><td>Mode</td><td>Online, individual participation</td></tr><tr><td>Entry fee</td><td>₹9 per participant — proposed</td></tr>
+     <tr><td>Question count</td><td>30 MCQs — proposed</td></tr><tr><td>Duration</td><td>25 minutes — proposed</td></tr>
+     <tr><td>Difficulty</td><td>Easy to moderate; a small number of challenging questions</td></tr><tr><td>Audience</td><td>Eligible students and quiz enthusiasts across India</td></tr>
+     <tr><td>Dates / time</td><td><span class="badge">To be announced</span></td></tr><tr><td>Prize pool</td><td><span class="badge">To be confirmed</span></td></tr>
+     <tr><td>Certificates</td><td>Only if confirmed by the organising team</td></tr><tr><td>Contact</td><td>Insert official support email or community contact before publishing</td></tr>
+    </tbody></table></div>
+    <div class="callout warn"><b>Do not publish placeholders as promises.</b> Finalise dates, prizes, certificate eligibility, contact details, payment workflow and refund policy before the event goes live.</div>
+   </section>
+   <section class="section card" id="format">
+    <h2><span class="number">03</span>Competition format</h2>
+    <div class="grid2">
+     <div class="mini"><h4>Single-round model</h4><p>All participants attempt the same mixed quiz. No separate coding round, team round or presentation.</p></div>
+     <div class="mini"><h4>Assessment type</h4><p>Objective, single-answer multiple-choice questions with four options per question.</p></div>
+     <div class="mini"><h4>Participation</h4><p>One individual attempt per participant, only if supported by the final platform configuration.</p></div>
+     <div class="mini"><h4>Accessibility</h4><p>No advanced programming prerequisite. Basic computer awareness and reasoning are enough to participate.</p></div>
+    </div>
+    <h3>Recommended difficulty distribution</h3>
+    <div class="mini"><div style="display:flex;justify-content:space-between"><b>Easy</b><b>15 questions · 50%</b></div><div class="progress"><span style="width:50%"></span></div></div>
+    <div class="mini" style="margin-top:9px"><div style="display:flex;justify-content:space-between"><b>Moderate</b><b>12 questions · 40%</b></div><div class="progress"><span style="width:40%"></span></div></div>
+    <div class="mini" style="margin-top:9px"><div style="display:flex;justify-content:space-between"><b>Challenging</b><b>3 questions · 10%</b></div><div class="progress"><span style="width:10%"></span></div></div>
+    <p class="small muted">Difficulty is a design target, not a guarantee of equal difficulty for every participant. Pilot-test questions with a few students before launch.</p>
+   </section>
+   <section class="section card" id="syllabus">
+    <h2><span class="number">04</span>Quiz blueprint & syllabus</h2>
+    <p class="section-intro">Thirty questions in five categories, so technical students can use their strengths without giving non-technical students an unfair disadvantage.</p>
+    <div class="table-wrap"><table><thead><tr><th>Category</th><th>Questions</th><th>Share</th><th>Example topics</th></tr></thead><tbody>
+     <tr><td>Technology & computer fundamentals</td><td>8</td><td>26.7%</td><td>Programming basics, output prediction, networks, databases, cybersecurity, AI</td></tr>
+     <tr><td>Logical reasoning & patterns</td><td>6</td><td>20%</td><td>Sequences, number patterns, simple calculations, pattern recognition</td></tr>
+     <tr><td>Riddles & lateral thinking</td><td>5</td><td>16.7%</td><td>Everyday riddles, wordplay, short situational puzzles</td></tr>
+     <tr><td>Fun trivia & everyday science</td><td>5</td><td>16.7%</td><td>Basic science, inventions, digital culture, familiar technology facts</td></tr>
+     <tr><td>General awareness & digital world</td><td>6</td><td>20%</td><td>Internet basics, organisations, widely known facts, verified current affairs if used</td></tr>
+     <tr><td><b>Total</b></td><td><b>30</b></td><td><b>100%</b></td><td>One mixed quiz; no separate rounds</td></tr>
+    </tbody></table></div>
+    <h3>Question-writing standards</h3>
+    <ul><li>One defensible correct answer for each single-answer question.</li><li>Four distinct options; distractors should be plausible, not silly or misleading.</li><li>Keep wording concise and avoid ambiguous riddles with multiple valid interpretations.</li><li>Do not require obscure facts, paid tools, specialist coursework or advanced algorithms.</li><li>For current affairs, specify a reference cutoff date and verify every answer.</li><li>Do not include a question whose answer is revealed by another question.</li><li>Keep the language consistent across the whole paper; simple English is recommended for national reach.</li></ul>
+   </section>
+   <section class="section card" id="sample">
+    <h2><span class="number">05</span>Interactive sample questions</h2>
+    <p class="section-intro">Illustrative examples to demonstrate tone and difficulty. These are not the complete final 30-question paper.</p>
+    <div id="sampleQuiz">
+     <div class="quiz-sample" data-answer="B" data-explain="A stack follows Last In, First Out (LIFO).">
+      <div class="qtitle">Q1 · Technical: Which data structure follows LIFO?</div>
+      <label class="option"><input type="radio" name="q1" value="A"> Queue</label><label class="option"><input type="radio" name="q1" value="B"> Stack</label><label class="option"><input type="radio" name="q1" value="C"> Graph</label><label class="option"><input type="radio" name="q1" value="D"> Queue implemented with priorities</label><div class="feedback"></div>
+     </div>
+     <div class="quiz-sample" data-answer="C" data-explain="The differences are +4, +6, +8, +10, then +12; 30 + 12 = 42.">
+      <div class="qtitle">Q2 · Logic: What comes next? 2, 6, 12, 20, 30, ?</div>
+      <label class="option"><input type="radio" name="q2" value="A"> 36</label><label class="option"><input type="radio" name="q2" value="B"> 40</label><label class="option"><input type="radio" name="q2" value="C"> 42</label><label class="option"><input type="radio" name="q2" value="D"> 44</label><div class="feedback"></div>
+     </div>
+     <div class="quiz-sample" data-answer="A" data-explain="A keyboard has keys, but they do not open physical locks.">
+      <div class="qtitle">Q3 · Riddle: What has keys but cannot open locks?</div>
+      <label class="option"><input type="radio" name="q3" value="A"> A keyboard</label><label class="option"><input type="radio" name="q3" value="B"> A padlock</label><label class="option"><input type="radio" name="q3" value="C"> A key ring</label><label class="option"><input type="radio" name="q3" value="D"> A door</label><div class="feedback"></div>
+     </div>
+     <div class="quiz-sample" data-answer="C" data-explain="Saturn is especially well known for its prominent ring system.">
+      <div class="qtitle">Q4 · Everyday science: Which planet is famous for its prominent rings?</div>
+      <label class="option"><input type="radio" name="q4" value="A"> Mars</label><label class="option"><input type="radio" name="q4" value="B"> Venus</label><label class="option"><input type="radio" name="q4" value="C"> Saturn</label><label class="option"><input type="radio" name="q4" value="D"> Mercury</label><div class="feedback"></div>
+     </div>
+     <div class="quiz-sample" data-answer="B" data-explain="Google develops Android and leads its ecosystem, though Android is based on the Android Open Source Project.">
+      <div class="qtitle">Q5 · Digital world: Which company leads development of the Android platform?</div>
+      <label class="option"><input type="radio" name="q5" value="A"> Apple</label><label class="option"><input type="radio" name="q5" value="B"> Google</label><label class="option"><input type="radio" name="q5" value="C"> Adobe</label><label class="option"><input type="radio" name="q5" value="D"> Mozilla</label><div class="feedback"></div>
+     </div>
+    </div>
+    <button class="btn primary" onclick="gradeSamples()">Check sample answers</button> <button class="btn" onclick="resetSamples()">Reset</button>
+    <p class="small muted">Keep the final quiz key in a restricted organiser document. Do not expose answers on the public event page before the quiz.</p>
+   </section>
+   <section class="section card" id="scoring">
+    <h2><span class="number">06</span>Scoring, ranking & tie-break policy</h2>
+    <div class="grid3">
+     <div class="mini"><h4 style="color:var(--green)">+4</h4><p>For each correct answer</p></div><div class="mini"><h4 style="color:var(--red)">−1</h4><p>For each incorrect answer</p></div><div class="mini"><h4 style="color:var(--muted)">0</h4><p>For each unattempted question</p></div>
+    </div>
+    <p>Under the proposed scoring system, the maximum score is 30 × 4 = <b>120 points</b>. A wrong answer incurs a one-point penalty, while leaving a question blank earns zero.</p>
+    <h3>Recommended tie-break order</h3>
+    <ol><li>Higher total score.</li><li>Higher number of correct answers.</li><li>Shorter completion time, but only if the platform exposes a reliable and comparable time field.</li><li>If still tied, use a pre-announced tie-break question or a documented organiser review method that is fair to all tied participants.</li></ol>
+    <div class="callout warn"><b>Platform dependency:</b> Verify whether Unstop supports negative marking, the desired timer, one-attempt enforcement, answer shuffling and exportable time data in the specific quiz configuration. If a setting is unavailable, update the rules before registration opens; never announce a scoring rule the platform cannot enforce.</div>
+    <h3>Result validation</h3>
+    <ul><li>Export or review the official score report where available.</li><li>Check for duplicate entries, incomplete attempts and obvious data anomalies.</li><li>Apply the published tie-break order consistently.</li><li>Have a second organiser review the final top positions.</li><li>Record the final result approval date and retain an internal audit copy.</li></ul>
+   </section>
+   <section class="section card" id="rules">
+    <h2><span class="number">07</span>Participant rules & integrity policy</h2>
+    <ol>
+     <li>Participation is individual. Collaboration or answer-sharing during the live quiz is not allowed.</li>
+     <li>Use accurate registration information and the account associated with your entry.</li>
+     <li>Attempt the quiz only within the official schedule and follow the platform's instructions.</li>
+     <li>Do not share active quiz questions, screenshots, answers or hints with other participants.</li>
+     <li>Impersonation, unauthorised assistance, duplicate accounts intended to gain an advantage and exploitation of platform bugs are prohibited.</li>
+     <li>Participants should arrange a stable internet connection and compatible device before starting.</li>
+     <li>Participants are responsible for reading the instructions before launching an attempt.</li>
+     <li>Personal connectivity or device problems do not automatically guarantee extra time or a retake.</li>
+     <li>Any disqualification must be based on the published policy and available evidence.</li>
+     <li>Results are subject to the announced verification and tie-break process.</li>
+     <li>Any query or result concern must be submitted to the official contact within the announced review window.</li>
+     <li>The platform's applicable terms and final event listing also apply.</li>
+    </ol>
+    <h3>Refund and cancellation policy</h3>
+    <p>Publish a clear policy before accepting payment. State how cancellations, event rescheduling, technical failure and eligible refunds will be handled, consistent with Unstop's applicable payment terms and local law. Do not promise that fees are refundable or non-refundable until the actual policy is confirmed.</p>
+   </section>
+   <section class="section card" id="operations">
+    <h2><span class="number">08</span>End-to-end operations workflow</h2>
+    <div class="table-wrap"><table><thead><tr><th>Stage</th><th>Action</th><th>Owner</th><th>Output / check</th></tr></thead><tbody>
+     <tr><td>1 · Approve</td><td>Approve name, audience, entry fee, budget and prize policy.</td><td>Event Lead</td><td>Signed-off event brief</td></tr>
+     <tr><td>2 · Write</td><td>Create 30 questions and a separate answer key; verify each item.</td><td>Quiz Team</td><td>Reviewed question bank</td></tr>
+     <tr><td>3 · Configure</td><td>Build the event listing and quiz in Unstop; test settings.</td><td>Platform Lead</td><td>Working test assessment</td></tr>
+     <tr><td>4 · Publish</td><td>Publish accurate dates, eligibility, fee, rules, prizes and contact details.</td><td>Event Lead + Marketing</td><td>Approved live listing</td></tr>
+     <tr><td>5 · Promote</td><td>Share posters, college community messages and reminders.</td><td>Marketing Team</td><td>Tracked outreach plan</td></tr>
+     <tr><td>6 · Run</td><td>Monitor support channel and platform status during the announced window.</td><td>Operations Team</td><td>Issue log and participant support</td></tr>
+     <tr><td>7 · Verify</td><td>Review scores, eligibility, duplicate entries and tie-breaks.</td><td>Results Team</td><td>Validated leaderboard</td></tr>
+     <tr><td>8 · Close</td><td>Publish results and deliver confirmed prizes/certificates.</td><td>Event Lead</td><td>Result announcement and close-out report</td></tr>
+    </tbody></table></div>
+    <h3>Event-day control room</h3>
+    <ul><li>One designated lead owns decisions and participant-facing updates.</li><li>One person monitors platform announcements and technical issues.</li><li>One support channel is used consistently; avoid scattered unofficial instructions.</li><li>Log major incidents with time, issue, action and outcome.</li><li>Do not change quiz rules after the competition begins unless required to address a serious fairness issue; communicate any change clearly.</li></ul>
+   </section>
+   <section class="section card" id="roles">
+    <h2><span class="number">09</span>Team roles & responsibilities</h2>
+    <div class="grid2">
+     <div class="mini"><h4>Event Lead</h4><p>Owns scope, approvals, budget, risk decisions and final event communication.</p></div>
+     <div class="mini"><h4>Quiz & Content Team</h4><p>Writes questions, checks answers, balances difficulty and removes ambiguity.</p></div>
+     <div class="mini"><h4>Platform & Operations</h4><p>Configures Unstop, tests assessment settings, monitors delivery and documents issues.</p></div>
+     <div class="mini"><h4>Marketing & Outreach</h4><p>Creates posters, schedules promotions, contacts communities and tracks outreach.</p></div>
+     <div class="mini"><h4>Results & Support</h4><p>Validates leaderboard, applies tie-breaks, answers queries and coordinates awards.</p></div>
+     <div class="mini"><h4>Independent Reviewer</h4><p>Checks the final paper, answer key, rules and top results for accuracy and fairness.</p></div>
+    </div>
+    <p class="small muted">One volunteer can hold more than one role in a small team, but quiz-key verification and final result approval should receive a second-person review.</p>
+   </section>
+   <section class="section card" id="timeline">
+    <h2><span class="number">10</span>Suggested preparation timeline</h2>
+    <div class="table-wrap"><table><thead><tr><th>Relative timing</th><th>Deliverable</th><th>Exit condition</th></tr></thead><tbody>
+     <tr><td>T−14 to T−12 days</td><td>Concept approval, budget, platform feasibility</td><td>Fee and event model approved</td></tr>
+     <tr><td>T−11 to T−8 days</td><td>Question bank, answer key, rules and review</td><td>All 30 questions validated</td></tr>
+     <tr><td>T−7 to T−5 days</td><td>Unstop setup, test attempt and poster</td><td>Settings and listing checked</td></tr>
+     <tr><td>T−4 to T−1 days</td><td>Promotion, reminders, participant instructions</td><td>Support and event-day team ready</td></tr>
+     <tr><td>T day</td><td>Run quiz and monitor incidents</td><td>Attempts closed and records retained</td></tr>
+     <tr><td>T+1 to T+3 days</td><td>Score verification and result publication</td><td>Leaderboard approved and communicated</td></tr>
+     <tr><td>After results</td><td>Deliver confirmed awards, close budget and review</td><td>Event close-out completed</td></tr>
+    </tbody></table></div>
+    <p class="muted small">This is a suggested relative schedule, not a confirmed event calendar. Adjust it to the actual registration period and organiser availability.</p>
+   </section>
+   <section class="section card" id="budget">
+    <h2><span class="number">11</span>Interactive budget & revenue planner</h2>
+    <p class="section-intro">Estimate gross registration revenue and a basic budget balance. These figures are editable planning assumptions, not a forecast or guaranteed profit.</p>
+    <div class="formgrid">
+     <div class="field"><label for="fee">Entry fee per paid registration (₹)</label><input id="fee" type="number" min="0" value="9"></div>
+     <div class="field"><label for="count">Number of paid registrations</label><input id="count" type="number" min="0" value="300"></div>
+     <div class="field"><label for="prize">Prize pool (₹)</label><input id="prize" type="number" min="0" value="1000"></div>
+     <div class="field"><label for="marketingCost">Marketing cost (₹)</label><input id="marketingCost" type="number" min="0" value="300"></div>
+     <div class="field"><label for="otherCost">Other costs (₹)</label><input id="otherCost" type="number" min="0" value="200"></div>
+     <div class="field"><label for="platformCost">Estimated platform/payment costs (₹)</label><input id="platformCost" type="number" min="0" value="0"><span class="small muted">Replace with actual confirmed charges.</span></div>
+    </div>
+    <div class="calc-results">
+     <div class="result"><small>Gross revenue</small><strong id="gross">₹2,700</strong></div>
+     <div class="result"><small>Estimated costs</small><strong id="costs">₹1,500</strong></div>
+     <div class="result"><small>Budget balance</small><strong id="balance">₹1,200</strong></div>
+    </div>
+    <div class="callout warn">The model excludes tax treatment, refunds, complimentary entries and any charges not entered. Confirm whether the listed fee is the participant-facing amount and what the organiser actually receives after applicable deductions.</div>
+    <h3>Simple registration scenarios at ₹9</h3>
+    <div class="table-wrap"><table><thead><tr><th>Paid registrations</th><th>Gross revenue</th><th>Interpretation</th></tr></thead><tbody><tr><td>100</td><td>₹900</td><td>Small pilot</td></tr><tr><td>300</td><td>₹2,700</td><td>Moderate student turnout</td></tr><tr><td>500</td><td>₹4,500</td><td>Broader outreach</td></tr><tr><td>1,000</td><td>₹9,000</td><td>Strong reach; not guaranteed</td></tr></tbody></table></div>
+   </section>
+   <section class="section card" id="risk">
+    <h2><span class="number">12</span>Risk register & mitigation</h2>
+    <div class="table-wrap"><table><thead><tr><th>Risk</th><th>Impact</th><th>Mitigation</th></tr></thead><tbody>
+     <tr><td>Unstop does not support a desired setting</td><td>Scoring or timing mismatch</td><td>Test the exact assessment configuration before publishing; revise policy if needed.</td></tr>
+     <tr><td>Question ambiguity or wrong key</td><td>Unfair result and reputational damage</td><td>Independent review, pilot test and locked answer-key version.</td></tr>
+     <tr><td>Low registrations</td><td>Small revenue and participation</td><td>Promote through relevant student communities; avoid relying on one channel.</td></tr>
+     <tr><td>Connectivity/platform incident</td><td>Interrupted attempts</td><td>Publish support process, document incident and follow a pre-announced fair response policy.</td></tr>
+     <tr><td>Answer sharing or duplicate accounts</td><td>Integrity concerns</td><td>Clear rules, available platform controls and documented evidence-based review.</td></tr>
+     <tr><td>Prize/budget shortfall</td><td>Unfulfilled commitment</td><td>Confirm funding before advertising prizes; retain a budget buffer.</td></tr>
+     <tr><td>Delayed results or awards</td><td>Loss of participant trust</td><td>Set realistic dates, assign an owner and send status updates if a delay occurs.</td></tr>
+     <tr><td>Privacy or contact-data misuse</td><td>Participant harm and trust loss</td><td>Collect only necessary information, restrict access and follow platform privacy terms.</td></tr>
+    </tbody></table></div>
+   </section>
+   <section class="section card" id="marketing">
+    <h2><span class="number">13</span>Marketing & communication pack</h2>
+    <h3>A. Short event announcement</h3>
+    <div class="copyrow"><span class="muted small">Ready to adapt for WhatsApp / community groups</span><button class="btn" onclick="copyText('announcement')">Copy</button></div>
+    <div class="copybox" id="announcement">🧠 THE ULTIMATE MIX QUIZ is coming!
+
+Think fast. Mix it up. Claim the top spot.
+
+⚡ One online quiz | 30 MCQs | 25 minutes
+💻 Tech + Logic + Riddles + Fun Trivia + General Awareness
+🎓 Open to eligible students across India
+💸 Proposed entry fee: ₹9
+🏆 Prizes and certificates: details to be announced
+
+Hosted on Unstop by Catalyst Crew / Catalyst Crew Dev Community.
+
+No advanced coding required — just curiosity, knowledge and quick thinking.
+
+📅 Date: [Insert confirmed date]
+🔗 Register: [Insert official Unstop event link]
+
+Read the official rules before registering. Event details are subject to the final published listing.</div>
+    <h3>B. Unstop listing description</h3>
+    <div class="copyrow"><span class="muted small">Long-form listing copy</span><button class="btn" onclick="copyText('listingCopy')">Copy</button></div>
+    <div class="copybox" id="listingCopy">THE ULTIMATE MIX QUIZ — National Online Quiz Competition
+
+Ready to put your knowledge and quick thinking to the test?
+
+The Ultimate Mix Quiz brings technology, logical reasoning, riddles, fun trivia, everyday science and general awareness together in one exciting online competition. Designed for a broad student audience, this quiz welcomes eligible participants from IITs, NITs, engineering colleges, BCA/BSc programmes and other academic backgrounds.
+
+FORMAT
+• Individual participation
+• One online MCQ quiz
+• 30 questions
+• 25-minute proposed duration
+• Easy-to-moderate difficulty
+
+CATEGORIES
+• Technology & Computer Fundamentals
+• Logical Reasoning & Patterns
+• Riddles & Lateral Thinking
+• Fun Trivia & Everyday Science
+• General Awareness & Digital World
+
+PROPOSED ENTRY FEE: ₹9 per participant.
+
+DATE & TIME: [Insert confirmed schedule]
+PRIZES: [Insert only confirmed prizes]
+CERTIFICATES: [State confirmed eligibility and delivery details]
+REGISTRATION LINK: [Insert official Unstop link]
+CONTACT: [Insert official support contact]
+
+Read the full rules, scoring policy and platform instructions before starting. The final event listing and Unstop configuration govern participation.</div>
+    <h3>C. Poster copy</h3>
+    <div class="copyrow"><span class="muted small">Text for a poster design</span><button class="btn" onclick="copyText('posterCopy')">Copy</button></div>
+    <div class="copybox" id="posterCopy">THE ULTIMATE MIX QUIZ
+THINK FAST. MIX IT UP. CLAIM THE TOP SPOT.
+
+TECH • LOGIC • RIDDLES • FUN TRIVIA • GENERAL KNOWLEDGE
+
+30 QUESTIONS | 25 MINUTES | ONLINE ON UNSTOP
+PROPOSED ENTRY: ₹9
+
+Open to eligible students across India
+Hosted by Catalyst Crew / Catalyst Crew Dev Community
+
+DATE: [CONFIRMED DATE]
+REGISTER: [OFFICIAL UNSTOP LINK]
+PRIZES: [CONFIRMED DETAILS ONLY]</div>
+    <h3>D. Reminder message</h3>
+    <div class="copyrow"><span class="muted small">Send only after dates are confirmed</span><button class="btn" onclick="copyText('reminderCopy')">Copy</button></div>
+    <div class="copybox" id="reminderCopy">⏳ Reminder: The Ultimate Mix Quiz is scheduled for [date/time].
+
+Get ready for a mixed challenge featuring technology, logic, riddles, fun trivia and general awareness. Please review the official instructions, ensure your Unstop registration is complete and join within the announced quiz window.
+
+Official event page: [link]
+For support: [official contact]</div>
+   </section>
+   <section class="section card" id="unstop">
+    <h2><span class="number">14</span>Unstop setup & launch verification</h2>
+    <p class="section-intro">Use this as a platform verification checklist. The exact controls and payment terms depend on the event type and organiser account.</p>
+    <h3>Before creating the listing</h3>
+    <ul><li>Confirm the organiser profile and event ownership.</li><li>Check whether a paid-entry quiz at ₹9 is supported for this event setup.</li><li>Confirm applicable platform/payment charges, payout timing, settlement terms and refund handling.</li><li>Confirm assessment timer, question types, negative marking, shuffle options, attempt limits and score export availability.</li><li>Confirm what participant details are visible to organisers and how data may be used.</li></ul>
+    <h3>Listing configuration</h3>
+    <ul><li>Use the approved event title and concise description.</li><li>Set eligibility, registration opening and closing dates, quiz date and timezone explicitly.</li><li>State the exact entry fee and any applicable terms.</li><li>Publish the final scoring policy, tie-break method and support contact.</li><li>Advertise only confirmed prizes and certificates.</li><li>Test a complete participant journey, where the platform provides a safe test mode.</li></ul>
+    <div class="callout"><b>Official resource:</b> <a href="https://unstop.com/faq/organizers" target="_blank" rel="noopener">Unstop Organizer FAQ</a>. Use the current official help centre and the options shown in your own organiser dashboard to verify settings.</div>
+    <h3>Go / no-go gate</h3>
+    <p>Do not launch until the fee/payment route works as intended, the assessment has been tested, the rules match the available settings, and the prize budget is approved.</p>
+   </section>
+   <section class="section card" id="checklist">
+    <h2><span class="number">15</span>Interactive launch checklist</h2>
+    <p class="section-intro">Tick each item as your team completes it. Progress is kept for this page while it remains open; it is not saved to a server.</p>
+    <div class="progress"><span id="checkProgress"></span></div><p class="small muted" id="checkCount">0 of 18 complete</p>
+    <div class="checklist" id="launchChecks">
+     <label class="check"><input type="checkbox"><span>Event concept, title and organiser identity approved</span></label>
+     <label class="check"><input type="checkbox"><span>Dates, timezone and registration window confirmed</span></label>
+     <label class="check"><input type="checkbox"><span>₹9 fee and actual platform/payment terms verified</span></label>
+     <label class="check"><input type="checkbox"><span>Prize pool funded and certificate policy approved</span></label>
+     <label class="check"><input type="checkbox"><span>Refund/cancellation policy checked and published</span></label>
+     <label class="check"><input type="checkbox"><span>All 30 questions written and independently verified</span></label>
+     <label class="check"><input type="checkbox"><span>Difficulty and category distribution reviewed</span></label>
+     <label class="check"><input type="checkbox"><span>Answer key checked by a second reviewer</span></label>
+     <label class="check"><input type="checkbox"><span>Timer, score rules and negative marking tested</span></label>
+     <label class="check"><input type="checkbox"><span>Attempt limits and shuffling settings verified</span></label>
+     <label class="check"><input type="checkbox"><span>Participant flow and submission tested</span></label>
+     <label class="check"><input type="checkbox"><span>Support contact and incident procedure ready</span></label>
+     <label class="check"><input type="checkbox"><span>Poster, announcement and Unstop description reviewed</span></label>
+     <label class="check"><input type="checkbox"><span>Official registration link verified</span></label>
+     <label class="check"><input type="checkbox"><span>Marketing and college outreach assigned</span></label>
+     <label class="check"><input type="checkbox"><span>Result verification and tie-break owners assigned</span></label>
+     <label class="check"><input type="checkbox"><span>Result date and award delivery plan confirmed</span></label>
+     <label class="check"><input type="checkbox"><span>Final go/no-go approval recorded</span></label>
+    </div>
+    <div class="split" style="margin-top:16px"><button class="btn" onclick="resetChecklist()">Reset checklist</button><button class="btn primary" onclick="window.print()">Print documentation</button></div>
+   </section>
+   <section class="section card faq" id="faq">
+    <h2><span class="number">16</span>Frequently asked questions</h2>
+    <details><summary>Is this a hackathon?</summary><p>No. It is a single-round online quiz. Participants answer MCQs rather than building or submitting a project.</p></details>
+    <details><summary>Can IIT and NIT students participate?</summary><p>The event is intended to be open to eligible students across India, including IITs and NITs. Confirm the final eligibility requirements in the published listing.</p></details>
+    <details><summary>Do participants need advanced coding skills?</summary><p>No. Only part of the quiz is technical. Logic, riddles, fun trivia and general awareness balance the paper.</p></details>
+    <details><summary>Is the entry fee definitely ₹9?</summary><p>₹9 is the proposed participant fee. Confirm that Unstop supports the intended payment setup and clarify applicable charges before publishing.</p></details>
+    <details><summary>Are prizes and certificates guaranteed?</summary><p>No. They must be confirmed and funded or otherwise secured by the organisers before being advertised.</p></details>
+    <details><summary>What if a participant has a network problem?</summary><p>The published support and incident policy will apply. A connectivity issue does not automatically guarantee a retake or extra time.</p></details>
+    <details><summary>How will ties be resolved?</summary><p>Use the pre-announced sequence: score, number of correct answers, reliable completion-time data if available, then a documented final tie-break method.</p></details>
+   </section>
+   <section class="section card" id="appendix">
+    <h2><span class="number">17</span>Final sign-off & editable event details</h2>
+    <p class="section-intro">Fill this form during planning. Use “Generate summary” to create a concise approval record you can copy into your team document.</p>
+    <div class="formgrid">
+     <div class="field"><label for="organiser">Organiser / club name</label><input id="organiser" value="Catalyst Crew / Catalyst Crew Dev Community"></div>
+     <div class="field"><label for="eventDate">Quiz date</label><input id="eventDate" type="date"></div>
+     <div class="field"><label for="eventTime">Quiz time & timezone</label><input id="eventTime" placeholder="e.g. 6:00 PM IST"></div>
+     <div class="field"><label for="regClose">Registration closes</label><input id="regClose" type="date"></div>
+     <div class="field"><label for="prizeDetails">Confirmed prize details</label><input id="prizeDetails" placeholder="Enter only confirmed awards"></div>
+     <div class="field"><label for="contactDetails">Official support contact</label><input id="contactDetails" placeholder="Official email or community contact"></div>
+     <div class="field"><label for="eventLink">Official Unstop event link</label><input id="eventLink" placeholder="Paste verified event URL"></div>
+     <div class="field"><label for="approver">Approved by</label><input id="approver" placeholder="Name / role"></div>
+    </div>
+    <div class="split" style="margin-top:16px"><button class="btn primary" onclick="generateSummary()">Generate approval summary</button><button class="btn" onclick="copyText('approvalSummary')">Copy summary</button></div>
+    <div class="copybox" id="approvalSummary" style="margin-top:14px">Complete the fields above, then select “Generate approval summary”.</div>
+    <h3>Approval criteria</h3>
+    <ul><li>Event scope and target audience approved.</li><li>Platform/payment feasibility confirmed.</li><li>Question bank and scoring policy validated.</li><li>Budget and advertised awards confirmed.</li><li>Rules, contact details and event dates finalised.</li><li>Launch checklist completed by the responsible team.</li></ul>
+    <div class="callout good"><b>Launch decision:</b> GO only when all essential checks are complete. Otherwise, hold publication until the gaps are resolved.</div>
+   </section>
+  </main>
+ </div>
+ <footer class="footer"><div class="wrap"><b>THE ULTIMATE MIX QUIZ · EVENT PLAYBOOK</b><p>Prepared as an editable planning document for Catalyst Crew / Catalyst Crew Dev Community. Event dates, platform settings, fees, prizes, certificates and policies are proposals until confirmed by the organisers and the platform.</p><p class="small">Version 1.0 · Planning draft · Use the current official Unstop terms and organiser dashboard as the authority for platform-specific features.</p></div></footer>
+</div>
+<script>
+function formatINR(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+function updateBudget(){
+ const v=id=>Math.max(0,Number(document.getElementById(id).value)||0);
+ const gross=v('fee')*v('count'), costs=v('prize')+v('marketingCost')+v('otherCost')+v('platformCost'), balance=gross-costs;
+ document.getElementById('gross').textContent=formatINR(gross);
+ document.getElementById('costs').textContent=formatINR(costs);
+ const b=document.getElementById('balance');b.textContent=formatINR(balance);b.style.color=balance<0?'#ff8c9b':'#73e2a7';
+}
+['fee','count','prize','marketingCost','otherCost','platformCost'].forEach(id=>document.getElementById(id).addEventListener('input',updateBudget));
+function gradeSamples(){
+ document.querySelectorAll('.quiz-sample').forEach(card=>{
+  const chosen=card.querySelector('input:checked'), feedback=card.querySelector('.feedback');
+  if(!chosen){feedback.textContent='Choose an option to check this question.';feedback.className='feedback muted';return}
+  const correct=chosen.value===card.dataset.answer;
+  feedback.textContent=(correct?'Correct. ':'Not quite. ')+card.dataset.explain;
+  feedback.className='feedback '+(correct?'answer':'wrong');
+ });
+}
+function resetSamples(){document.querySelectorAll('#sampleQuiz input').forEach(x=>x.checked=false);document.querySelectorAll('.feedback').forEach(x=>{x.textContent='';x.className='feedback'})}
+function updateChecks(){
+ const boxes=[...document.querySelectorAll('#launchChecks input')],done=boxes.filter(x=>x.checked).length;
+ document.getElementById('checkProgress').style.width=(done/boxes.length*100)+'%';
+ document.getElementById('checkCount').textContent=done+' of '+boxes.length+' complete';
+ boxes.forEach(x=>x.closest('.check').classList.toggle('done',x.checked));
+}
+document.querySelectorAll('#launchChecks input').forEach(x=>x.addEventListener('change',updateChecks));
+function resetChecklist(){document.querySelectorAll('#launchChecks input').forEach(x=>x.checked=false);updateChecks()}
+async function copyText(id){
+ const el=document.getElementById(id);const text=el.innerText||el.textContent;
+ try{await navigator.clipboard.writeText(text);toast('Copied to clipboard')}catch(e){
+  const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();toast('Copied to clipboard')
+ }
+}
+function toast(msg){
+ let t=document.getElementById('toast');if(!t){t=document.createElement('div');t.id='toast';t.style.cssText='position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#d8fbff;color:#07111e;padding:11px 16px;border-radius:12px;z-index:50;font-weight:800;box-shadow:0 10px 35px #0007';document.body.appendChild(t)}
+ t.textContent=msg;t.style.opacity='1';clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.style.opacity='0',1800)
+}
+function generateSummary(){
+ const val=id=>document.getElementById(id).value.trim()||'[Not finalised]';
+ const s=`THE ULTIMATE MIX QUIZ — APPROVAL SUMMARY
+Organiser: ${val('organiser')}
+Platform: Unstop (settings and payment workflow to be verified)
+Entry fee: ₹9 proposed
+Format: Individual online quiz · 30 MCQs · 25 minutes proposed
+Categories: Technical fundamentals, logic, riddles, fun trivia, general awareness
+Quiz date: ${val('eventDate')}
+Quiz time: ${val('eventTime')}
+Registration closes: ${val('regClose')}
+Confirmed prizes: ${val('prizeDetails')}
+Support contact: ${val('contactDetails')}
+Event link: ${val('eventLink')}
+Approved by: ${val('approver')}
+
+Launch gate: Verify platform settings, fee settlement, questions/answer key, rules, prizes, support contact and event dates before publishing.`;
+ document.getElementById('approvalSummary').textContent=s;
+}
+function downloadHTML(){
+ const blob=new Blob(['<!DOCTYPE html>\\n'+document.documentElement.outerHTML],{type:'text/html;charset=utf-8'});
+ const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='ultimate-mix-quiz-event-documentation.html';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
+}
+updateBudget();updateChecks();
+const links=[...document.querySelectorAll('.sidebar a')];
+if('IntersectionObserver' in window){const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}}),{rootMargin:'-20% 0px -70% 0px'});document.querySelectorAll('main .section').forEach(s=>obs.observe(s))}
+</script>
+</body>
+</html>
